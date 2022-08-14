@@ -1,0 +1,5 @@
+Results of hadolint linter (version 2.10.0)
+See documentation on https://oxsecurity.github.io/megalinter/latest/descriptors/dockerfile_hadolint/
+-----------------------------------------------
+
+✅ [SUCCESS] Dockerfile
