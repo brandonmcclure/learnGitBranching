@@ -72,7 +72,7 @@ jobs:
         with:
           string: ${{ env.IMAGE_NAME }}
       - name: Save Docker Image archive to local filesystem
-        run: "docker save --output learnGitBranching.tar ${{ steps.lowercaseImageName.lowercaseImageName }}"
+        run: "docker save --output learnGitBranching.tar ${{ steps.lowercaseImageName.outputs.lowercase }}"
       - name: Upload application's Docker Image as pipeline artifact
         uses: actions/upload-artifact@v2
         with:
