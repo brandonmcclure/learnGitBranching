@@ -26,13 +26,15 @@ build:
 	docker run --rm -v $${PWD}:/mnt --workdir /mnt node:14.20.0-alpine3.16 yarn gulp fastBuild
 build_docker: getcommitid getbranchname
 	docker build -t $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME)$(TAG) -t $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME):$(BRANCH_NAME) -t $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME):$(BRANCH_NAME)_$(COMMITID) .
+	docker build --target export --output type=local,dest=learnGitBranching_$(BRANCH_NAME)_$(COMMITID) .
 
 build_multiarch:
 	docker buildx build -t $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME)$(TAG) --platform $(PLATFORMS) .
 
-run: build
-	docker run $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME)$(TAG)
-
+run: 
+	docker run -p 8080:80 $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME)$(TAG)
+run_it: 
+	docker run --entrypoint /bin/sh -it $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME)$(TAG)
 package:
 	$$PackageFileName = "$$("$(IMAGE_NAME)" -replace "/","_").tar"; docker save $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME)$(TAG) -o $$PackageFileName
 
