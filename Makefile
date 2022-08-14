@@ -12,7 +12,7 @@ IMAGE_NAME := learngitbranching
 TAG := :latest
 
 PLATFORMS := linux/amd64,linux/arm64,linux/arm/v7
-.PHONY := all clean test
+.PHONY: all clean test
 all: build
 
 getcommitid:
