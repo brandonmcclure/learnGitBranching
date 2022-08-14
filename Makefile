@@ -12,7 +12,7 @@ IMAGE_NAME := learngitbranching
 TAG := :latest
 
 PLATFORMS := linux/amd64,linux/arm64,linux/arm/v7
-
+.PHONY := all clean test
 all: build
 
 getcommitid:
@@ -45,3 +45,7 @@ size:
 publish:
 	docker login; docker push $(REGISTRY_NAME)$(REPOSITORY_NAME)$(IMAGE_NAME)$(TAG); docker logout
 
+clean:
+	echo 'not implemented'
+test:
+	echo 'not implemented'
