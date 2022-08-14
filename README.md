@@ -141,6 +141,7 @@ Alternatively, you can also build and run the app in a pre-configured online wor
 [//]: contributor-faces
 
 ## Helpful Folks
+
 A big shoutout to these brave souls for extensively testing our sandbox and finding bugs and/or inconsistencies:
 
 * Nikita Kouevda
@@ -148,6 +149,7 @@ A big shoutout to these brave souls for extensively testing our sandbox and find
 * Dan Miller
 
 And the following heroes for assisting in translating:
+
 * Jake Chen
 * 우리깃 ("urigit")
 * "bcho"

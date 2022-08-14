@@ -14,6 +14,20 @@ hadolint (DOCKERFILE)
   - vscode:
     - hadolint: https://marketplace.visualstudio.com/items?itemName=exiasr.hadolint
 
+eslint-plugin-jsonc (JSON)
+  - vscode:
+    - vscode-eslint: https://github.com/ota-meshi/eslint-plugin-jsonc#visual-studio-code
+
+v8r (JSON)
+  - eclipse:
+    - native support: https://www.eclipse.org/
+  - idea:
+    - native support: https://www.jetbrains.com/products/#type=ide
+  - vim:
+    - vison: https://github.com/Quramy/vison
+  - vscode:
+    - native support: https://code.visualstudio.com/
+
 markdownlint (MARKDOWN)
   - atom:
     - linter-node-markdownlint: https://atom.io/packages/linter-node-markdownlint
