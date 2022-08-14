@@ -1,0 +1,9 @@
+Results of markdownlint linter (version 0.32.1)
+See documentation on https://oxsecurity.github.io/megalinter/latest/descriptors/markdown_markdownlint/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /github/workspace
+Linter raw log:
+/github/workspace/README.md:18 MD001/heading-increment/header-increment Heading levels should only increment by one level at a time [Expected: h2; Actual: h3]
+/github/workspace/README.md:40:401 MD013/line-length Line length [Expected: 400; Actual: 522]
+

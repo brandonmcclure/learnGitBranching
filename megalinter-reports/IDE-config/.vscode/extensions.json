@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "exiasr.hadolint",
+        "esbenp.prettier-vscode"
+    ]
+}
