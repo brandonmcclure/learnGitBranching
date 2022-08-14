@@ -1,6 +1,6 @@
 FROM node:14.20.0-alpine3.16 as build
 
-RUN apk add git=2.37.1-r1 --no-cache
+RUN apk add git --no-cache
 WORKDIR "/src"
 
 COPY . /src

@@ -52,4 +52,4 @@ VendorLib/clang/lib/arc
 VendorLib/clang/lib/c++
 
 .idea
-megalinter-reports
+megalinter-reports/*
