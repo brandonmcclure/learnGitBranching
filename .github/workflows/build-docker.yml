@@ -55,10 +55,10 @@ jobs:
         if: github.ref != 'refs/heads/main'
         with:
           context: .
+          load: true
           push: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }} 
-
       - name: Build and push Docker image (main branch)
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         if: github.ref == 'refs/heads/main'
@@ -67,3 +67,10 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }} 
+      - name: Save Docker Image archive to local filesystem
+        run: "docker save --output learnGitBranching.tar ${{ env.IMAGE_NAME }}"
+      - name: Upload application's Docker Image as pipeline artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: learnGitBranching.tar
+          name: learnGitBranching.tar
