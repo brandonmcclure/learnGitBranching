@@ -69,9 +69,7 @@ Thus, if you build the app locally, all you have to do in order to run the app i
 
 ## Building yourself / Contributing Functionality
 
-docker run --rm -v ${PWD}:/mnt --workdir /mnt node:14.20.0-alpine3.16 yarn 
-install
-docker run --rm -v ${PWD}:/mnt --workdir /mnt node:14.20.0-alpine3.16 yarn gulp fastBuild
+If you are interested in building via docker, see the [Makefile](Makefile)
 
 For contributing core functionality in the app, you'll probably want to test your changes
 at least once before submitting a pull request. That means you'll need the "gulp.js" build tool to build the app:
