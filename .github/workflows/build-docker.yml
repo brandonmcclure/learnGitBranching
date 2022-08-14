@@ -67,7 +67,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }} 
-      - name: lowercaseImageName
+      - id: lowercaseImageName
         uses: ASzc/change-string-case-action@v2
         with:
           string: ${{ env.IMAGE_NAME }}
