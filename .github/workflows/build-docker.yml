@@ -19,7 +19,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/learnGitBranching
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push-image:
@@ -67,8 +67,12 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }} 
+      - name: lowercaseImageName
+        uses: ASzc/change-string-case-action@v2
+        with:
+          string: ${{ env.IMAGE_NAME }}
       - name: Save Docker Image archive to local filesystem
-        run: "docker save --output learnGitBranching.tar ${{ env.IMAGE_NAME }}"
+        run: "docker save --output learnGitBranching.tar ${{ steps.lowercaseImageName.lowercaseImageName }}"
       - name: Upload application's Docker Image as pipeline artifact
         uses: actions/upload-artifact@v2
         with:
