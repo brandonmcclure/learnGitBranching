@@ -12,6 +12,7 @@ on:
   pull_request:
     branches:
       - main  # Trigger gated pipeline on PR to main
+      - bmcclure/main
     paths:
       - '**/*'
       - '.github/workflows/build-docker.yml'
